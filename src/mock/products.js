@@ -44,10 +44,9 @@ export const mockProducts = [
     stock: 5,
     rating: 4.9,
     reviewCount: 16,
-    images: [
-      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=80"
-    ],
+   images: [
+  "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80"
+],
     video: "https://assets.mixkit.co/videos/preview/mixkit-young-woman-modelling-indian-traditional-clothing-41317-large.mp4",
     careInstructions: "Dry Clean Only. Avoid direct perfume sprays on the gold embroidery.",
     relatedProducts: ["prod-1", "prod-5", "prod-8"]
@@ -96,8 +95,8 @@ export const mockProducts = [
     rating: 4.6,
     reviewCount: 11,
     images: [
-      "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=80"
-    ],
+  "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=80"
+],
     video: "https://assets.mixkit.co/videos/preview/mixkit-woman-in-anarkali-suit-modeling-in-studio-41315-large.mp4",
     careInstructions: "Dry clean only. Steam iron gently.",
     relatedProducts: ["prod-1", "prod-2", "prod-9"]
