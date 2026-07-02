@@ -78,7 +78,10 @@ export default function Customize() {
   };
 
   return (
-    <div className="bg-[#FFFFFF] text-[#181818] min-h-screen">
+    <div
+      className="text-[#181818] min-h-screen bg-fixed bg-no-repeat bg-cover"
+      style={{ background: "linear-gradient(180deg, #FBE7C6 0%, #F6EFE3 40%, #E9DCC4 100%)" }}
+    >
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-12">
 
       {success ? (
@@ -86,7 +89,7 @@ export default function Customize() {
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-primary dark:bg-neutral-900 border border-[#D9C7A3] p-12 text-center space-y-6"
+          className="bg-white dark:bg-neutral-900 border border-[#D9C7A3] p-12 text-center space-y-6"
         >
           <div className="w-16 h-16 bg-[#3E7C59]/10 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle className="w-8 h-8 text-[#3E7C59]" />
@@ -142,7 +145,7 @@ export default function Customize() {
                       done
                         ? 'bg-[#B68D40] border-[#B68D40] text-white shadow-sm'
                         : active
-                        ? 'bg-white border-[#B68D40] text-[#B68D40] shadow-md ring-4 ring-primary'
+                        ? 'bg-white border-[#B68D40] text-[#B68D40] shadow-md ring-4 ring-[#F3E9D8]'
                         : 'bg-white dark:bg-neutral-850 border-neutral-200 text-neutral-400'
                     }`}
                   >
@@ -159,7 +162,7 @@ export default function Customize() {
           </div>
 
           {/* Form Step Components */}
-          <div className="bg-white dark:bg-[#181818] border border-[#ECECEC] dark:border-neutral-800 p-8 shadow-sm">
+          <div className="bg-[#FFFDFC] dark:bg-[#181818] border border-[#E6DCCF] dark:border-neutral-800 p-8 shadow-[0_4px_16px_-10px_rgba(24,24,24,0.12)]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={step}
@@ -258,7 +261,7 @@ export default function Customize() {
                       Tailoring Sizing Measurements
                     </h3>
                     
-                    <div className="bg-primary dark:bg-neutral-900 border border-border-custom p-4 text-[11px] font-sans text-neutral-500 leading-relaxed text-justify">
+                    <div className="bg-[#FAF3E7] dark:bg-neutral-900 border border-[#E6DCCF] p-4 text-[11px] font-sans text-neutral-500 leading-relaxed text-justify">
                       <span className="font-bold text-[#B68D40] uppercase tracking-widest block mb-1">Tailoring Note:</span>
                       For a perfect draping silhouette, we recommend using a standard tailor tape. Wrap the tape comfortably (not too tight) around the bust, natural waist, and hips. If unsure, you may submit approximations; our stylist will finalize sizing with you.
                     </div>
@@ -386,7 +389,7 @@ export default function Customize() {
                       <div className="md:col-span-2 space-y-2">
                         <label className="text-[9px] uppercase tracking-wider text-neutral-400 font-sans block">References & Sketch Uploads</label>
                         
-                        <div className="border-2 border-dashed border-neutral-300 dark:border-neutral-750 p-6 flex flex-col items-center justify-center space-y-2 bg-primary/30">
+                        <div className="border-2 border-dashed border-neutral-300 dark:border-neutral-750 p-6 flex flex-col items-center justify-center space-y-2 bg-[#FAF3E7]/50">
                           <Upload className="w-8 h-8 text-[#B68D40] opacity-80" />
                           <div className="text-center">
                             <label className="cursor-pointer text-[10px] tracking-widest text-[#B68D40] uppercase font-bold hover:text-black">
@@ -455,7 +458,7 @@ export default function Customize() {
                         <h4 className="text-[9px] tracking-widest text-[#B68D40] font-sans font-bold uppercase border-b pb-1">
                           Measurements dossier
                         </h4>
-                        <div className="grid grid-cols-3 gap-2 text-center bg-primary dark:bg-neutral-900 p-3.5 border border-neutral-200">
+                        <div className="grid grid-cols-3 gap-2 text-center bg-[#FAF3E7] dark:bg-neutral-900 p-3.5 border border-neutral-200">
                           <div>
                             <span className="text-neutral-400 text-[8px] uppercase block">Bust</span>
                             <span className="font-bold text-text-custom dark:text-primary">{formData.measurements.bust || "—"}</span>

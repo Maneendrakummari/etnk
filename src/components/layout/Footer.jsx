@@ -2,6 +2,38 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
 
+// Lucide doesn't ship Pinterest / WhatsApp glyphs, so these are lightweight custom outlines
+// kept in the same stroke style as the lucide icons for visual consistency.
+const InstagramIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const PinterestIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M8 20c1-3 2-6.5 2.5-9" />
+    <path d="M9.5 14.5c-.7-1.4-.4-4.2 1.7-5.3 2.5-1.3 5.3.2 5.5 3 .2 2.4-1.2 5.3-3.7 5.3-1 0-1.7-.4-2-1" />
+    <circle cx="12" cy="12" r="10" />
+  </svg>
+);
+
+const FacebookIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3.5H8V21h3.5v-7.5h3l.5-3.5h-3.5V7.5c0-.6.4-1 1-1H15V3Z" />
+  </svg>
+);
+
+const WhatsAppIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M20.5 11.9a8.5 8.5 0 1 1-3.8-7.1" />
+    <path d="M20.5 11.9c0 4.7-3.8 8.5-8.5 8.5-1.4 0-2.7-.3-3.9-.9L3.5 20.5l1-4.5a8.4 8.4 0 0 1-1-4c0-.1 0-.2 0-.3" />
+    <path d="M9 9.3c.1-.6.6-1 1.1-1h.5c.3 0 .5.2.6.5l.6 1.5c.1.3 0 .6-.2.8l-.5.5c.5.9 1.3 1.7 2.2 2.2l.5-.5c.2-.2.5-.3.8-.2l1.5.6c.3.1.5.3.5.6v.5c0 .5-.4 1-1 1.1-2.6.4-6-3-6.4-5.6" />
+  </svg>
+);
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -15,6 +47,13 @@ export default function Footer() {
     }
   };
 
+  const socials = [
+    { label: 'Instagram', Icon: InstagramIcon, href: '#' },
+    { label: 'Pinterest', Icon: PinterestIcon, href: '#' },
+    { label: 'WhatsApp', Icon: WhatsAppIcon, href: '#' },
+    { label: 'Facebook', Icon: FacebookIcon, href: '#' },
+  ];
+
   return (
     <footer className="bg-[#181818] text-[#F8F6F2] pt-20 pb-12 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -25,14 +64,15 @@ export default function Footer() {
           <p className="text-[11px] font-sans leading-relaxed text-neutral-400 text-justify">
             ETNIKO is an architectural tribute to the art of ethnic drapes. Founded in Hyderabad by designer Niharika, our studio creates body-inclusive, customizable handloom garments woven with heritage zari details and a deep commitment to Indian artisan preservation.
           </p>
-          <div className="flex space-x-4 pt-2">
-            {['Instagram', 'Pinterest', 'WhatsApp', 'Facebook'].map(social => (
+          <div className="flex space-x-3 pt-2">
+            {socials.map(({ label, Icon, href }) => (
               <a
-                key={social}
-                href="#"
-                className="text-[9px] uppercase tracking-widest text-[#D9C7A3] hover:text-white transition-colors"
+                key={label}
+                href={href}
+                aria-label={label}
+                className="group w-9 h-9 flex items-center justify-center rounded-full border border-neutral-700 text-[#D9C7A3] hover:border-[#D9C7A3] hover:bg-[#D9C7A3] transition-all duration-300"
               >
-                {social}
+                <Icon className="w-[15px] h-[15px] transition-colors duration-300 group-hover:text-[#181818]" strokeWidth={1.5} />
               </a>
             ))}
           </div>

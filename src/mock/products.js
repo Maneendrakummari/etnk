@@ -146,7 +146,7 @@ export const mockProducts = [
     rating: 4.8,
     reviewCount: 8,
     images: [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80"
     ],
     video: "https://assets.mixkit.co/videos/preview/mixkit-cute-little-girl-spinning-in-traditional-attire-41321-large.mp4",
     careInstructions: "Dry clean recommended. Gentle hand wash inside out.",
@@ -181,23 +181,16 @@ for (let i = 7; i <= 50; i++) {
   const occasion = occasions[i % occasions.length];
   const color = colors[i % colors.length];
 
-  // Pick realistic luxury images
-  const imageSet = [
-    `https://images.unsplash.com/photo-${1600000000000 + (i * 200000)}?auto=format&fit=crop&w=1000&q=80`,
-    `https://images.unsplash.com/photo-${1600000010000 + (i * 200000)}?auto=format&fit=crop&w=1000&q=80`
-  ];
-
-  // Fail-safes for image URLs to use gorgeous aesthetic fashion shots
+  // Fail-safes for image URLs to use gorgeous aesthetic fashion shots (all verified-real Unsplash IDs)
   const staticAestheticImages = [
     "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1610030470298-4c5855797ee3?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1608748010899-18f300247112?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80"
   ];
-  
+
   const selectedImages = [
     staticAestheticImages[i % staticAestheticImages.length],
     staticAestheticImages[(i + 1) % staticAestheticImages.length]

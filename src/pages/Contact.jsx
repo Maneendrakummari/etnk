@@ -49,16 +49,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#FFFFFF] text-[#181818] min-h-screen space-y-16 pb-0">
+    <div
+      className="text-[#181818] min-h-screen space-y-16 pb-0 bg-fixed bg-no-repeat bg-cover"
+      style={{ background: "linear-gradient(180deg, #FBE7C6 0%, #F6EFE3 40%, #E9DCC4 100%)" }}
+    >
       
       {/* SECTION 1: HERO SPLIT BANNER */}
-      <section className="relative w-full h-[55vh] md:h-[45vh] bg-[#F8F6F2] dark:bg-[#181818] overflow-hidden flex flex-col md:flex-row items-center justify-between border-b">
+      <section className="relative w-full h-[55vh] md:h-[45vh] bg-[#181818] overflow-hidden flex flex-col md:flex-row items-center justify-between border-b">
         <div className="w-full md:w-1/2 px-6 md:px-16 py-8 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-serif font-light tracking-wide uppercase text-text-custom dark:text-primary">
+          <h1 className="text-4xl md:text-5xl font-serif font-light tracking-wide uppercase text-[#F8F6F2]">
             CONTACT US
           </h1>
           <div className="w-12 h-[1px] bg-[#B68D40]" />
-          <p className="text-xs font-sans text-neutral-500 leading-relaxed max-w-md">
+          <p className="text-xs font-sans text-neutral-300 leading-relaxed max-w-md">
             We would love to hear from you. Whether you have a question about our collections, need styling advice, or want to book an appointment, our team is here to help you.
           </p>
         </div>
@@ -76,7 +79,7 @@ export default function Contact() {
       <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start pt-4">
         
         {/* Column 1: Send us a message form */}
-        <div className="bg-white border border-[#ECECEC] p-8 shadow-sm space-y-6">
+        <div className="bg-[#FBF6EC] border border-[#E6DCCF] p-8 shadow-sm space-y-6">
           <div className="text-center space-y-1">
             <h3 className="font-serif text-base tracking-widest text-[#181818] uppercase">SEND US A MESSAGE</h3>
             <div className="flex items-center justify-center gap-1.5">
@@ -96,7 +99,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Enter your name"
-                className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2.5 text-xs text-text-custom focus:outline-none focus:border-[#B68D40]"
+                className="w-full bg-white border border-[#E6DCCF] px-3 py-2.5 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40]"
               />
             </div>
 
@@ -109,7 +112,7 @@ export default function Contact() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="Enter your phone number"
-                className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2.5 text-xs text-text-custom focus:outline-none focus:border-[#B68D40]"
+                className="w-full bg-white border border-[#E6DCCF] px-3 py-2.5 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40]"
               />
             </div>
 
@@ -122,7 +125,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="Enter your email"
-                className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2.5 text-xs text-text-custom focus:outline-none focus:border-[#B68D40]"
+                className="w-full bg-white border border-[#E6DCCF] px-3 py-2.5 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40]"
               />
             </div>
 
@@ -135,7 +138,7 @@ export default function Contact() {
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2.5 text-xs text-text-custom focus:outline-none focus:border-[#B68D40]"
+                  className="w-full bg-white border border-[#E6DCCF] px-3 py-2.5 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40]"
                 >
                   <option value="">Select a subject</option>
                   <option value="Consultation">Private Fitting</option>
@@ -152,7 +155,7 @@ export default function Contact() {
                   required
                   value={formData.enquiryType}
                   onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value })}
-                  className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2.5 text-xs text-text-custom focus:outline-none focus:border-[#B68D40]"
+                  className="w-full bg-white border border-[#E6DCCF] px-3 py-2.5 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40]"
                 >
                   <option value="">Select enquiry type</option>
                   <option value="Bridal">Bridal couture</option>
@@ -171,14 +174,14 @@ export default function Contact() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Type your message here..."
-                className="w-full bg-[#F8F6F2] border border-[#ECECEC] px-3 py-2 text-xs text-text-custom focus:outline-none focus:border-[#B68D40] resize-none"
+                className="w-full bg-white border border-[#E6DCCF] px-3 py-2 text-xs text-[#181818] focus:outline-none focus:border-[#B68D40] resize-none"
               />
             </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full bg-[#0B251A] hover:bg-[#B68D40] text-[#D9C7A3] hover:text-white border border-[#B68D40] py-3.5 text-[10px] font-sans font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
+                className="w-full bg-[#181818] hover:bg-[#B68D40] text-[#D4AF37] hover:text-[#181818] border border-[#B68D40] py-3.5 text-[10px] font-sans font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
               >
                 <span>SEND MESSAGE</span>
                 <span>&gt;</span>
@@ -206,7 +209,7 @@ export default function Contact() {
         </div>
 
         {/* Column 2: Get in Touch direct contacts */}
-        <div className="border border-[#ECECEC] p-8 shadow-sm space-y-6 h-full">
+        <div className="bg-[#FBF6EC] border border-[#E6DCCF] p-8 shadow-sm space-y-6 h-full">
           <div className="text-center space-y-1">
             <h3 className="font-serif text-base tracking-widest text-[#181818] uppercase">GET IN TOUCH</h3>
             <div className="flex items-center justify-center gap-1.5">
@@ -220,19 +223,19 @@ export default function Contact() {
             
             {/* Phone contact */}
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#0B251A] flex items-center justify-center text-[#D9C7A3] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center text-[#D4AF37] shrink-0">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="space-y-0.5">
                 <h4 className="text-[10px] tracking-widest font-sans font-bold text-neutral-400 uppercase">PHONE</h4>
-                <p className="text-xs font-semibold text-text-custom">+91 89783 59546</p>
+                <p className="text-xs font-semibold text-[#181818]">+91 89783 59546</p>
                 <p className="text-[10px] text-neutral-400">Mon - Sun : 10:30 AM - 8:30 PM</p>
               </div>
             </div>
 
             {/* WhatsApp link */}
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#0B251A] flex items-center justify-center text-[#D9C7A3] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center text-[#D4AF37] shrink-0">
                 <MessageCircle className="w-4 h-4" />
               </div>
               <div className="space-y-0.5">
@@ -250,31 +253,31 @@ export default function Contact() {
 
             {/* Email contact */}
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#0B251A] flex items-center justify-center text-[#D9C7A3] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center text-[#D4AF37] shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
               <div className="space-y-0.5">
                 <h4 className="text-[10px] tracking-widest font-sans font-bold text-neutral-400 uppercase">EMAIL</h4>
-                <p className="text-xs font-semibold text-text-custom">hello@etniko.com</p>
+                <p className="text-xs font-semibold text-[#181818]">hello@etniko.com</p>
                 <p className="text-[10px] text-neutral-400">We reply within 24 hours</p>
               </div>
             </div>
 
             {/* Instagram links */}
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#0B251A] flex items-center justify-center text-[#D9C7A3] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center text-[#D4AF37] shrink-0">
                 <InstagramIcon className="w-4 h-4" />
               </div>
               <div className="space-y-0.5">
                 <h4 className="text-[10px] tracking-widest font-sans font-bold text-neutral-400 uppercase">INSTAGRAM</h4>
-                <p className="text-xs font-semibold text-text-custom">@etniko.boutique</p>
+                <p className="text-xs font-semibold text-[#181818]">@etniko.boutique</p>
                 <p className="text-[10px] text-neutral-400">Follow for latest collections</p>
               </div>
             </div>
 
             {/* visit boutique */}
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#0B251A] flex items-center justify-center text-[#D9C7A3] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center text-[#D4AF37] shrink-0">
                 <MapPin className="w-4 h-4" />
               </div>
               <div className="space-y-0.5">
@@ -289,7 +292,7 @@ export default function Contact() {
         </div>
 
         {/* Column 3: Visit our studio interactive map */}
-        <div className="border border-[#ECECEC] p-8 shadow-sm space-y-6 h-full flex flex-col justify-between">
+        <div className="bg-[#FBF6EC] border border-[#E6DCCF] p-8 shadow-sm space-y-6 h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div className="text-center space-y-1">
               <h3 className="font-serif text-base tracking-widest text-[#181818] uppercase">VISIT OUR STUDIO</h3>
@@ -305,7 +308,7 @@ export default function Contact() {
             </p>
 
             {/* Custom SVG stylized Map representation to avoid broken iframe */}
-            <div className="relative aspect-[1.4/1] w-full border border-[#D9C7A3] bg-[#F8F6F2] overflow-hidden p-2 flex flex-col justify-end">
+            <div className="relative aspect-[1.4/1] w-full border border-[#D9C7A3] bg-white overflow-hidden p-2 flex flex-col justify-end">
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* stylized map streets */}
                 <path d="M 0 35 L 140 35" stroke="#ECECEC" strokeWidth="3" />
@@ -336,7 +339,7 @@ export default function Contact() {
             <a 
               href="https://maps.google.com/?q=Kondapur+Hyderabad+K1+Primo" 
               target="_blank" rel="noreferrer"
-              className="w-full bg-[#0B251A] hover:bg-[#B68D40] text-[#D9C7A3] hover:text-white border border-[#B68D40] py-3.5 text-[9.5px] font-sans font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
+              className="w-full bg-[#181818] hover:bg-[#B68D40] text-[#D4AF37] hover:text-[#181818] border border-[#B68D40] py-3.5 text-[9.5px] font-sans font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
             >
               <MapPin className="w-3.5 h-3.5" />
               <span>GET DIRECTIONS</span>
@@ -347,7 +350,7 @@ export default function Contact() {
       </section>
 
       {/* SECTION 3: VALUE PROPOSITIONS BAR */}
-      <section className="max-w-7xl mx-auto px-6 border-t border-[#ECECEC] pt-12 pb-6">
+      <section className="max-w-7xl mx-auto px-6 border-t border-[#E6DCCF] pt-12 pb-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col items-center space-y-2">
             <Sparkles className="w-5 h-5 text-[#B68D40]" />
@@ -372,10 +375,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* SECTION 4: DARK GREEN QUOTATION AT THE BOTTOM */}
-      <section className="bg-[#0B251A] text-[#F8F6F2] py-10 px-6 border-t border-neutral-900 text-center flex flex-col items-center justify-center space-y-3 select-none">
+      {/* SECTION 4: DARK QUOTATION AT THE BOTTOM */}
+      <section className="bg-[#181818] text-[#F8F6F2] py-10 px-6 border-t border-neutral-900 text-center flex flex-col items-center justify-center space-y-3 select-none">
         <span className="text-[#B68D40] text-3xl font-serif leading-none">“</span>
-        <h2 className="font-serif text-lg md:text-xl tracking-wider text-[#D9C7A3] max-w-xl leading-relaxed italic">
+        <h2 className="font-serif text-lg md:text-xl tracking-wider text-[#D4AF37] max-w-xl leading-relaxed italic">
           Every conversation brings us closer to creating something beautiful for you.
         </h2>
         <span className="text-[#B68D40] text-3xl font-serif leading-none">”</span>

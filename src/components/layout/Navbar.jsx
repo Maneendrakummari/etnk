@@ -211,21 +211,21 @@ export default function Navbar({ onOpenCart }) {
 
           {/* DESKTOP MEGA DROP-DOWN MENU OVERLAY */}
           {showMegaMenu && (
-            <div className="absolute left-0 right-0 top-full bg-[#FFFFFF] text-[#181818] border border-[#ECECEC] rounded-b-2xl shadow-xl p-8 z-50 animate-page-fade-in">
+            <div className="absolute left-0 right-0 top-full bg-[#FFFDFC] text-[#181818] border border-[#E6DCCF] rounded-b-2xl shadow-xl p-8 z-50 animate-page-fade-in">
               <div className="max-w-[1440px] mx-auto grid grid-cols-12 gap-8">
                 
                 {/* Column 1: MEN */}
                 <div className="col-span-3 space-y-6 flex flex-col justify-between text-left">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2 border-b border-neutral-100 pb-2">
+                    <div className="flex items-center gap-2 border-b border-[#E6DCCF] pb-2">
                       <svg className="w-5 h-5 text-[#B68D40]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M6 3L12 8L18 3M12 8V21M6 3H9M18 3H15" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M4 8H20" strokeLinecap="round"/>
                       </svg>
-                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-neutral-850">MEN</h3>
+                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-[#181818]">MEN</h3>
                     </div>
 
-                    <div className="flex flex-col space-y-2 text-xs text-neutral-600 font-sans font-semibold">
+                    <div className="flex flex-col space-y-2 text-xs text-[#6E6E6E] font-sans font-semibold">
                       <Link to="/shop?category=MEN&subcategory=Kurtas" className="flex justify-between items-center hover:text-[#B68D40] group py-0.5">
                         <span>Kurtas</span>
                         <span className="text-[10px] text-neutral-400 group-hover:translate-x-1 transition-transform">&gt;</span>
@@ -241,7 +241,7 @@ export default function Navbar({ onOpenCart }) {
                     </div>
                   </div>
 
-                  <div className="aspect-[1.5/1] rounded-xl overflow-hidden bg-neutral-50 border border-neutral-100">
+                  <div className="aspect-[1.5/1] rounded-xl overflow-hidden bg-neutral-50 border border-[#E6DCCF]">
                     <img src={menSherwaniSun} alt="Men's collection" className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
@@ -249,14 +249,14 @@ export default function Navbar({ onOpenCart }) {
                 {/* Column 2: WOMEN */}
                 <div className="col-span-3 space-y-6 flex flex-col justify-between text-left">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2 border-b border-neutral-100 pb-2">
+                    <div className="flex items-center gap-2 border-b border-[#E6DCCF] pb-2">
                       <svg className="w-5 h-5 text-[#B68D40]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M12 3L16 9M12 3L8 9M8 9H16M8 9L6 21H18L16 9" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-neutral-855">WOMEN</h3>
+                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-[#181818]">WOMEN</h3>
                     </div>
 
-                    <div className="flex flex-col space-y-1.5 text-xs text-neutral-600 font-sans font-semibold">
+                    <div className="flex flex-col space-y-1.5 text-xs text-[#6E6E6E] font-sans font-semibold">
                       <Link to="/shop?category=WOMEN&subcategory=Sarees" className="flex justify-between items-center hover:text-[#B68D40] group py-0.5">
                         <span>Sarees</span>
                         <span className="text-[10px] text-neutral-400 group-hover:translate-x-1 transition-transform">&gt;</span>
@@ -284,7 +284,7 @@ export default function Navbar({ onOpenCart }) {
                     </div>
                   </div>
 
-                  <div className="aspect-[2.3/1] rounded-xl overflow-hidden bg-neutral-50 border border-neutral-100">
+                  <div className="aspect-[2.3/1] rounded-xl overflow-hidden bg-neutral-50 border border-[#E6DCCF]">
                     <img src={womenMaroonLehenga} alt="Women's collection" className="w-full h-full object-cover object-center" />
                   </div>
                 </div>
@@ -292,16 +292,16 @@ export default function Navbar({ onOpenCart }) {
                 {/* Column 3: KIDS */}
                 <div className="col-span-3 space-y-6 flex flex-col justify-between text-left">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2 border-b border-neutral-100 pb-2">
+                    <div className="flex items-center gap-2 border-b border-[#E6DCCF] pb-2">
                       <svg className="w-5 h-5 text-[#B68D40]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <circle cx="8" cy="7" r="3"/>
                         <circle cx="16" cy="7" r="3"/>
                         <path d="M4 18C4 15 6 13 8 13M20 18C20 15 18 13 16 13" strokeLinecap="round"/>
                       </svg>
-                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-neutral-860">KIDS</h3>
+                      <h3 className="font-serif text-sm tracking-widest uppercase font-bold text-[#181818]">KIDS</h3>
                     </div>
 
-                    <div className="flex flex-col space-y-2 text-xs text-neutral-600 font-sans font-semibold">
+                    <div className="flex flex-col space-y-2 text-xs text-[#6E6E6E] font-sans font-semibold">
                       <Link to="/shop?category=KIDS" className="flex justify-between items-center hover:text-[#B68D40] group py-0.5">
                         <span>Girls</span>
                         <span className="text-[10px] text-neutral-400 group-hover:translate-x-1 transition-transform">&gt;</span>
@@ -313,20 +313,20 @@ export default function Navbar({ onOpenCart }) {
                     </div>
                   </div>
 
-                  <div className="aspect-[1.3/1] rounded-xl overflow-hidden bg-neutral-50 border border-neutral-100">
+                  <div className="aspect-[1.3/1] rounded-xl overflow-hidden bg-neutral-50 border border-[#E6DCCF]">
                     <img src={kidsEthnicWear} alt="Kids collection" className="w-full h-full object-cover object-center" />
                   </div>
                 </div>
 
                 {/* Column 4: Couple card */}
-                <div className="col-span-3 rounded-2xl overflow-hidden relative aspect-[0.78/1] border border-neutral-100 flex flex-col justify-end p-6 text-left">
+                <div className="col-span-3 rounded-2xl overflow-hidden relative aspect-[0.78/1] border border-[#E6DCCF] flex flex-col justify-end p-6 text-left">
                   <img src={coupleWeddingIvory} alt="Wedding couple" className="absolute inset-0 w-full h-full object-cover object-top" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                   
                   <div className="relative z-10 space-y-4 text-white">
                     <div className="space-y-1">
                       <h3 className="font-serif text-xl leading-tight">
-                        Timeless<br/>Tradition.<br/><span className="text-[#D9C7A3] italic font-light">Modern You.</span>
+                        Timeless<br/>Tradition.<br/><span className="text-[#D4AF37] italic font-light">Modern You.</span>
                       </h3>
                       <p className="text-[9px] font-sans text-neutral-300 leading-relaxed uppercase tracking-wider">
                         Explore our handpicked designer collections.
@@ -335,7 +335,7 @@ export default function Navbar({ onOpenCart }) {
 
                     <Link 
                       to="/shop"
-                      className="bg-[#1D2820] hover:bg-[#B68D40] text-[#D9C7A3] hover:text-white border border-[#B68D40] px-4 py-2.5 text-[8.5px] font-sans font-bold tracking-widest uppercase transition-all duration-300 w-full flex items-center justify-center gap-1.5"
+                      className="bg-[#181818] hover:bg-[#B68D40] text-[#D4AF37] hover:text-[#181818] border border-[#B68D40] px-4 py-2.5 text-[8.5px] font-sans font-bold tracking-widest uppercase transition-all duration-300 w-full flex items-center justify-center gap-1.5"
                     >
                       <span>VIEW ALL COLLECTIONS</span>
                       <span>&gt;</span>
@@ -346,7 +346,7 @@ export default function Navbar({ onOpenCart }) {
               </div>
 
               {/* Bottom value props row */}
-              <div className="max-w-[1440px] mx-auto border-t border-neutral-100 pt-6 mt-6 grid grid-cols-4 gap-4 text-center text-xs">
+              <div className="max-w-[1440px] mx-auto border-t border-[#E6DCCF] pt-6 mt-6 grid grid-cols-4 gap-4 text-center text-xs">
                 <div className="flex items-center justify-center gap-2 py-1">
                   <svg className="w-4 h-4 text-[#B68D40] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="1" y="3" width="15" height="13" />

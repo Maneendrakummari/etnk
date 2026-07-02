@@ -31,7 +31,7 @@ export default function Profile() {
         const userProf = await userService.getUserProfile();
         const userOrd = await userService.getUserOrders();
         const userCust = await userService.getUserCustomizations();
-        
+
         setProfile(userProf);
         setOrders(userOrd);
         setCustomizations(userCust);
@@ -48,7 +48,7 @@ export default function Profile() {
   const handleAddAddress = async (e) => {
     e.preventDefault();
     if (!newAddress.name || !newAddress.phone || !newAddress.addressLine1 || !newAddress.city || !newAddress.postalCode) return;
-    
+
     try {
       const updatedAddresses = await userService.addAddress(newAddress);
       setProfile(prev => ({ ...prev, addresses: updatedAddresses }));
@@ -82,7 +82,10 @@ export default function Profile() {
 
   if (loading || !profile) {
     return (
-      <div className="py-32 text-center">
+      <div
+        className="py-32 text-center bg-fixed bg-no-repeat bg-cover"
+        style={{ background: "linear-gradient(180deg, #FBE7C6 0%, #F6EFE3 40%, #E9DCC4 100%)" }}
+      >
         <span className="font-serif italic text-[#B68D40] animate-pulse">Syncing Boutique Records...</span>
       </div>
     );
@@ -91,13 +94,17 @@ export default function Profile() {
   const ORDER_STATUS_STEPS = ['New', 'Confirmed', 'Packed', 'Shipped', 'Delivered'];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10 space-y-12">
-      
+    <div
+      className="min-h-screen text-[#181818] bg-fixed bg-no-repeat bg-cover"
+      style={{ background: "linear-gradient(180deg, #FBE7C6 0%, #F6EFE3 40%, #E9DCC4 100%)" }}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-10 space-y-12">
+
       {/* Profile Header card */}
-      <div className="bg-primary dark:bg-neutral-900 border border-border-custom dark:border-neutral-800 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="bg-[#FBF6EC] border border-[#E6DCCF] p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-1">
           <span className="text-[9px] uppercase tracking-[0.25em] text-[#B68D40] font-sans font-semibold">COUTURE CLIENT PORTAL</span>
-          <h1 className="text-3xl font-serif font-light text-text-custom dark:text-primary uppercase tracking-wider">{profile.name}</h1>
+          <h1 className="text-3xl font-serif font-light text-[#181818] uppercase tracking-wider">{profile.name}</h1>
           <p className="text-xs font-sans text-neutral-500 uppercase tracking-widest">
             Client ID: {profile.id} • Registered Since Jan 2026
           </p>
@@ -110,14 +117,14 @@ export default function Profile() {
 
       {/* Main dashboard splits */}
       <div className="flex flex-col md:flex-row gap-8 items-start">
-        
+
         {/* Left Side: Navigation Links Stack */}
-        <aside className="w-full md:w-64 border border-[#ECECEC] dark:border-neutral-800 shrink-0">
-          <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible divide-x md:divide-x-0 md:divide-y divide-[#ECECEC] dark:divide-neutral-800 text-[10px] font-sans font-semibold tracking-widest uppercase text-neutral-500">
+        <aside className="w-full md:w-64 border border-[#E6DCCF] shrink-0">
+          <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible divide-x md:divide-x-0 md:divide-y divide-[#E6DCCF] text-[10px] font-sans font-semibold tracking-widest uppercase text-neutral-500">
             <button
               onClick={() => { setActiveTab("orders"); setSelectedOrder(null); }}
               className={`flex-grow md:flex-grow-0 p-4 text-left flex items-center justify-between gap-2.5 focus:outline-none ${
-                activeTab === 'orders' ? 'bg-[#F8F6F2] dark:bg-neutral-800 text-[#B68D40]' : 'hover:bg-neutral-50 dark:hover:bg-neutral-900'
+                activeTab === 'orders' ? 'bg-[#F8F6F2] text-[#B68D40]' : 'hover:bg-neutral-50'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -130,7 +137,7 @@ export default function Profile() {
             <button
               onClick={() => { setActiveTab("addresses"); setSelectedOrder(null); }}
               className={`flex-grow md:flex-grow-0 p-4 text-left flex items-center justify-between gap-2.5 focus:outline-none ${
-                activeTab === 'addresses' ? 'bg-[#F8F6F2] dark:bg-neutral-800 text-[#B68D40]' : 'hover:bg-neutral-50 dark:hover:bg-neutral-900'
+                activeTab === 'addresses' ? 'bg-[#F8F6F2] text-[#B68D40]' : 'hover:bg-neutral-50'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -143,7 +150,7 @@ export default function Profile() {
             <button
               onClick={() => { setActiveTab("customizations"); setSelectedOrder(null); }}
               className={`flex-grow md:flex-grow-0 p-4 text-left flex items-center justify-between gap-2.5 focus:outline-none ${
-                activeTab === 'customizations' ? 'bg-[#F8F6F2] dark:bg-neutral-800 text-[#B68D40]' : 'hover:bg-neutral-50 dark:hover:bg-neutral-900'
+                activeTab === 'customizations' ? 'bg-[#F8F6F2] text-[#B68D40]' : 'hover:bg-neutral-50'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -156,7 +163,7 @@ export default function Profile() {
             <button
               onClick={() => { setActiveTab("settings"); setSelectedOrder(null); }}
               className={`flex-grow md:flex-grow-0 p-4 text-left flex items-center justify-between gap-2.5 focus:outline-none ${
-                activeTab === 'settings' ? 'bg-[#F8F6F2] dark:bg-neutral-800 text-[#B68D40]' : 'hover:bg-neutral-50 dark:hover:bg-neutral-900'
+                activeTab === 'settings' ? 'bg-[#F8F6F2] text-[#B68D40]' : 'hover:bg-neutral-50'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -169,8 +176,8 @@ export default function Profile() {
         </aside>
 
         {/* Right Side: Active tab details container panel */}
-        <div className="flex-grow w-full border border-[#ECECEC] dark:border-neutral-800 p-8 min-h-[50vh] bg-white dark:bg-[#181818]">
-          
+        <div className="flex-grow w-full border border-[#E6DCCF] p-8 min-h-[50vh] bg-[#FBF6EC]">
+
           {/* ORDERS HISTORY */}
           {activeTab === 'orders' && !selectedOrder && (
             <div className="space-y-6">
@@ -181,12 +188,12 @@ export default function Profile() {
                     <div
                       key={ord.id}
                       onClick={() => setSelectedOrder(ord)}
-                      className="border border-[#ECECEC] dark:border-neutral-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-[#B68D40] transition-colors cursor-pointer"
+                      className="border border-[#E6DCCF] p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-[#B68D40] transition-colors cursor-pointer"
                     >
                       <div className="space-y-2">
                         <div className="flex items-center gap-3">
                           <span className="font-mono text-xs font-semibold text-[#B68D40] tracking-wider">{ord.id}</span>
-                          <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 bg-[#F8F6F2] dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 font-semibold border border-neutral-200">
+                          <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 bg-[#F8F6F2] text-neutral-600 font-semibold border border-neutral-200">
                             {ord.orderStatus}
                           </span>
                         </div>
@@ -195,7 +202,7 @@ export default function Profile() {
                         </p>
                       </div>
                       <div className="text-left md:text-right space-y-1">
-                        <span className="font-sans text-xs font-bold text-neutral-800 dark:text-primary block">
+                        <span className="font-sans text-xs font-bold text-neutral-800 block">
                           ₹{ord.total.toLocaleString('en-IN')}
                         </span>
                         <span className="text-[9px] font-sans tracking-widest text-[#B68D40] uppercase font-bold flex items-center gap-1">
@@ -228,18 +235,18 @@ export default function Profile() {
               </div>
 
               {/* Status Tracking Step-by-Step progress */}
-              <div className="space-y-4 bg-[#F8F6F2] dark:bg-neutral-900 p-6 border border-neutral-200 dark:border-neutral-800">
+              <div className="space-y-4 bg-[#F8F6F2] p-6 border border-neutral-200">
                 <h4 className="text-[10px] font-sans font-bold tracking-widest uppercase text-[#B68D40] mb-4">
                   Milestone Order Tracking
                 </h4>
-                
+
                 {/* Horizontal flow */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-2">
                   {ORDER_STATUS_STEPS.map((step, idx) => {
                     const statusIdx = ORDER_STATUS_STEPS.indexOf(selectedOrder.orderStatus);
                     const isDone = idx <= statusIdx;
                     const isCurrent = idx === statusIdx;
-                    
+
                     return (
                       <div key={step} className="flex md:flex-col items-center gap-3 md:gap-1.5 md:flex-1 text-left md:text-center relative">
                         {/* Dot */}
@@ -261,10 +268,12 @@ export default function Profile() {
                       </div>
                     );
                   })}
-                              {selectedOrder.trackingNumber && (
+                </div>
+
+                {selectedOrder.trackingNumber && (
                   <div className="pt-4 border-t border-neutral-200/50 mt-4 text-[10px] font-sans text-neutral-500 uppercase tracking-widest">
                     <span>Premium blueDart courier Airway bill: </span>
-                    <span className="font-mono font-semibold text-neutral-800 dark:text-primary">{selectedOrder.trackingNumber}</span>
+                    <span className="font-mono font-semibold text-neutral-800">{selectedOrder.trackingNumber}</span>
                   </div>
                 )}
               </div>
@@ -282,7 +291,7 @@ export default function Profile() {
                           <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                         </div>
                         <div>
-                          <h5 className="font-serif text-[11px] uppercase tracking-wider leading-tight text-neutral-800 dark:text-primary">
+                          <h5 className="font-serif text-[11px] uppercase tracking-wider leading-tight text-neutral-800">
                             {item.name}
                           </h5>
                           <span className="text-[9px] font-sans text-neutral-400 block mt-0.5 uppercase tracking-wider">
@@ -290,7 +299,7 @@ export default function Profile() {
                           </span>
                         </div>
                       </div>
-                      <span className="font-sans text-xs font-semibold text-neutral-800 dark:text-primary">
+                      <span className="font-sans text-xs font-semibold text-neutral-800">
                         ₹{(item.price * item.qty).toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -300,12 +309,12 @@ export default function Profile() {
 
               {/* Delivery and totals summary split */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                <div className="space-y-3.5 text-xs text-neutral-600 dark:text-neutral-300 font-sans leading-relaxed">
+                <div className="space-y-3.5 text-xs text-neutral-600 font-sans leading-relaxed">
                   <h4 className="text-[10px] tracking-widest text-[#B68D40] font-sans font-bold uppercase">
                     Delivery Address
                   </h4>
-                  <div className="p-4 border border-neutral-200 dark:border-neutral-800 space-y-1 bg-primary dark:bg-neutral-900">
-                    <p className="font-bold text-neutral-800 dark:text-primary">{selectedOrder.shippingAddress.name}</p>
+                  <div className="p-4 border border-[#E6DCCF] space-y-1 bg-[#FBF6EC]">
+                    <p className="font-bold text-neutral-800">{selectedOrder.shippingAddress.name}</p>
                     <p>{selectedOrder.shippingAddress.addressLine1}</p>
                     {selectedOrder.shippingAddress.addressLine2 && <p>{selectedOrder.shippingAddress.addressLine2}</p>}
                     <p>{selectedOrder.shippingAddress.city}, {selectedOrder.shippingAddress.state} - {selectedOrder.shippingAddress.postalCode}</p>
@@ -313,10 +322,10 @@ export default function Profile() {
                   </div>
                 </div>
 
-                <div className="space-y-3 font-sans text-xs text-neutral-500 uppercase tracking-wider p-4 border border-neutral-200 bg-primary dark:bg-neutral-900">
+                <div className="space-y-3 font-sans text-xs text-neutral-500 uppercase tracking-wider p-4 border border-[#E6DCCF] bg-[#FBF6EC]">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span className="font-medium text-neutral-800 dark:text-primary">₹{selectedOrder.subtotal.toLocaleString('en-IN')}</span>
+                    <span className="font-medium text-neutral-800">₹{selectedOrder.subtotal.toLocaleString('en-IN')}</span>
                   </div>
                   {selectedOrder.discount > 0 && (
                     <div className="flex justify-between text-[#3E7C59]">
@@ -329,10 +338,10 @@ export default function Profile() {
                     <span className="text-[#3E7C59] font-bold">FREE</span>
                   </div>
                   <div className="border-t border-neutral-200/50 pt-2 flex justify-between items-end">
-                    <span className="font-serif text-xs text-text-custom dark:text-primary tracking-wider">TOTAL PAID</span>
+                    <span className="font-serif text-xs text-[#181818] tracking-wider">TOTAL PAID</span>
                     <span className="font-sans text-sm font-bold text-[#B68D40]">₹{selectedOrder.total.toLocaleString('en-IN')}</span>
                   </div>
-                </div>                </div>
+                </div>
               </div>
             </div>
           )}
@@ -352,7 +361,7 @@ export default function Profile() {
 
               {/* Add form */}
               {showAddressForm && (
-                <form onSubmit={handleAddAddress} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-[#D9C7A3] bg-[#F8F6F2] dark:bg-neutral-900">
+                <form onSubmit={handleAddAddress} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-[#D9C7A3] bg-[#F8F6F2]">
                   <div className="space-y-1">
                     <label className="text-[9px] uppercase tracking-wider text-neutral-400 font-sans">Full Name</label>
                     <input
@@ -360,7 +369,7 @@ export default function Profile() {
                       required
                       value={newAddress.name}
                       onChange={(e) => setNewAddress({ ...newAddress, name: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1">
@@ -370,7 +379,7 @@ export default function Profile() {
                       required
                       value={newAddress.phone}
                       onChange={(e) => setNewAddress({ ...newAddress, phone: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1 md:col-span-2">
@@ -380,7 +389,7 @@ export default function Profile() {
                       required
                       value={newAddress.addressLine1}
                       onChange={(e) => setNewAddress({ ...newAddress, addressLine1: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1 md:col-span-2">
@@ -389,7 +398,7 @@ export default function Profile() {
                       type="text"
                       value={newAddress.addressLine2}
                       onChange={(e) => setNewAddress({ ...newAddress, addressLine2: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1">
@@ -399,7 +408,7 @@ export default function Profile() {
                       required
                       value={newAddress.city}
                       onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1">
@@ -409,7 +418,7 @@ export default function Profile() {
                       required
                       value={newAddress.state}
                       onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1">
@@ -419,7 +428,7 @@ export default function Profile() {
                       required
                       value={newAddress.postalCode}
                       onChange={(e) => setNewAddress({ ...newAddress, postalCode: e.target.value })}
-                      className="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                      className="w-full bg-white border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                     />
                   </div>
                   <div className="space-y-1">
@@ -442,10 +451,10 @@ export default function Profile() {
                 {profile.addresses.map((addr, idx) => (
                   <div
                     key={idx}
-                    className="border border-[#ECECEC] dark:border-neutral-800 p-6 flex justify-between items-start bg-neutral-50 dark:bg-neutral-900"
+                    className="border border-[#E6DCCF] p-6 flex justify-between items-start bg-[#FBF6EC]"
                   >
-                    <div className="space-y-1.5 text-xs font-sans text-neutral-600 dark:text-neutral-300">
-                      <p className="font-bold text-neutral-800 dark:text-primary uppercase">{addr.name}</p>
+                    <div className="space-y-1.5 text-xs font-sans text-neutral-600">
+                      <p className="font-bold text-neutral-800 uppercase">{addr.name}</p>
                       <p>{addr.addressLine1}</p>
                       {addr.addressLine2 && <p>{addr.addressLine2}</p>}
                       <p>{addr.city}, {addr.state} - {addr.postalCode}</p>
@@ -476,7 +485,7 @@ export default function Profile() {
                   {customizations.map((cust) => (
                     <div
                       key={cust.id}
-                      className="border border-[#ECECEC] dark:border-neutral-800 p-6 space-y-6 bg-neutral-50 dark:bg-neutral-900"
+                      className="border border-[#E6DCCF] p-6 space-y-6 bg-[#FBF6EC]"
                     >
                       <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-neutral-200/50 pb-3 gap-3">
                         <div className="flex items-center gap-3">
@@ -497,36 +506,36 @@ export default function Profile() {
                             <img src={cust.productImage} alt={cust.productName} className="w-full h-full object-cover" />
                           </div>
                         )}
-                        <div className="flex-grow space-y-3.5 text-xs font-sans text-neutral-600 dark:text-neutral-300">
+                        <div className="flex-grow space-y-3.5 text-xs font-sans text-neutral-600">
                           <div>
                             <span className="text-neutral-400 block uppercase text-[9px] tracking-wider">Garment details:</span>
-                            <span className="font-semibold text-neutral-800 dark:text-primary uppercase">{cust.productName}</span>
+                            <span className="font-semibold text-neutral-800 uppercase">{cust.productName}</span>
                           </div>
-                          
+
                           {/* Measurements breakdown */}
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white dark:bg-neutral-800 p-3.5 border border-neutral-200">
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#FBF6EC] p-3.5 border border-[#E6DCCF]">
                             {cust.measurements.bust && (
                               <div>
                                 <span className="text-neutral-400 text-[8px] uppercase tracking-wider block">Bust</span>
-                                <span className="font-semibold text-neutral-800 dark:text-primary">{cust.measurements.bust}</span>
+                                <span className="font-semibold text-neutral-800">{cust.measurements.bust}</span>
                               </div>
                             )}
                             {cust.measurements.waist && (
                               <div>
                                 <span className="text-neutral-400 text-[8px] uppercase tracking-wider block">Waist</span>
-                                <span className="font-semibold text-neutral-800 dark:text-primary">{cust.measurements.waist}</span>
+                                <span className="font-semibold text-neutral-800">{cust.measurements.waist}</span>
                               </div>
                             )}
                             {cust.measurements.hips && (
                               <div>
                                 <span className="text-neutral-400 text-[8px] uppercase tracking-wider block">Hips</span>
-                                <span className="font-semibold text-neutral-800 dark:text-primary">{cust.measurements.hips}</span>
+                                <span className="font-semibold text-neutral-800">{cust.measurements.hips}</span>
                               </div>
                             )}
                             {cust.measurements.height && (
                               <div>
                                 <span className="text-neutral-400 text-[8px] uppercase tracking-wider block">Height</span>
-                                <span className="font-semibold text-neutral-800 dark:text-primary">{cust.measurements.height}</span>
+                                <span className="font-semibold text-neutral-800">{cust.measurements.height}</span>
                               </div>
                             )}
                           </div>
@@ -546,12 +555,12 @@ export default function Profile() {
                           <h5 className="text-[9px] font-sans font-bold tracking-widest text-[#B68D40] uppercase">Stylist Logs</h5>
                           <div className="space-y-2 text-[10px] font-sans">
                             {cust.notes.map((n, idx) => (
-                              <div key={idx} className="bg-white dark:bg-neutral-800 p-3 border border-neutral-200">
+                              <div key={idx} className="bg-[#FBF6EC] p-3 border border-[#E6DCCF]">
                                 <div className="flex justify-between items-center mb-1 text-neutral-400">
                                   <span className="font-bold uppercase text-[8px] tracking-wider text-[#B68D40]">{n.author}</span>
                                   <span>{new Date(n.timestamp).toLocaleDateString()}</span>
                                 </div>
-                                <p className="text-neutral-600 dark:text-neutral-300 font-medium">"{n.text}"</p>
+                                <p className="text-neutral-600 font-medium">"{n.text}"</p>
                               </div>
                             ))}
                           </div>
@@ -570,7 +579,7 @@ export default function Profile() {
           {activeTab === 'settings' && (
             <div className="space-y-6">
               <h3 className="font-serif text-lg tracking-wider border-b border-neutral-100 pb-3 uppercase">Account Settings</h3>
-              
+
               <form onSubmit={handleUpdateSettings} className="space-y-4 max-w-lg">
                 <div className="space-y-1">
                   <label className="text-[9px] uppercase tracking-wider text-neutral-400 font-sans">Full Name</label>
@@ -579,7 +588,7 @@ export default function Profile() {
                     required
                     value={settingsForm.name}
                     onChange={(e) => setSettingsForm({ ...settingsForm, name: e.target.value })}
-                    className="w-full bg-transparent border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                    className="w-full bg-transparent border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                   />
                 </div>
 
@@ -590,7 +599,7 @@ export default function Profile() {
                     required
                     value={settingsForm.email}
                     onChange={(e) => setSettingsForm({ ...settingsForm, email: e.target.value })}
-                    className="w-full bg-transparent border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40]"
+                    className="w-full bg-transparent border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40]"
                   />
                 </div>
 
@@ -601,7 +610,7 @@ export default function Profile() {
                     required
                     value={settingsForm.phone}
                     onChange={(e) => setSettingsForm({ ...settingsForm, phone: e.target.value })}
-                    className="w-full bg-transparent border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-xs font-sans text-[#181818] dark:text-white focus:outline-none focus:border-[#B68D40] uppercase"
+                    className="w-full bg-transparent border border-neutral-300 px-3 py-2 text-xs font-sans text-[#181818] focus:outline-none focus:border-[#B68D40] uppercase"
                   />
                 </div>
 
@@ -622,6 +631,7 @@ export default function Profile() {
 
       </div>
 
+    </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ const LOOKS_DATA = [
     description: "Timeless saree look for weddings",
     duration: "0:32",
     tags: ["Saree", "Earrings"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-beautiful-woman-in-traditional-indian-dress-41314-large.mp4",
+    videoUrl: "https://assets.mixkit.co/n0ttlreavgu2tlxt0tzegag43rxm",
     products: [
       {
         id: "lkp-1",
@@ -62,7 +62,7 @@ const LOOKS_DATA = [
     description: "Perfect for haldi & daytime events",
     duration: "0:28",
     tags: ["Anarkali", "Dupatta"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-woman-in-anarkali-suit-modeling-in-studio-41315-large.mp4",
+    videoUrl: "https://assets.mixkit.co/ocx5y8mq7bgfzf1k9ohlmou5gyv6",
     products: [
       {
         id: "lkp-3",
@@ -83,7 +83,7 @@ const LOOKS_DATA = [
     description: "A modern regal affair",
     duration: "0:30",
     tags: ["Lehenga", "Necklace"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-woman-modelling-indian-traditional-clothing-41317-large.mp4",
+    videoUrl: "https://assets.mixkit.co/3y5ab0asbol20kyfjxbthw62d2js",
     products: [
       {
         id: "lkp-4",
@@ -115,7 +115,7 @@ const LOOKS_DATA = [
     description: "Gentlemen's festive edit",
     duration: "0:27",
     tags: ["Kurta", "Jacket"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-man-wearing-traditional-indian-clothes-modeling-41320-large.mp4",
+    videoUrl: "https://assets.mixkit.co/dyys30tgnmx8hvpu2z3i6r5jviuj",
     products: [
       {
         id: "lkp-6",
@@ -136,7 +136,7 @@ const LOOKS_DATA = [
     description: "For receptions & celebrations",
     duration: "0:31",
     tags: ["Lehenga", "Maang Tikka"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-woman-modelling-indian-traditional-clothing-41317-large.mp4",
+    videoUrl: "https://assets.mixkit.co/l4c6a4ovnkosfbggsvcvvnaap58m",
     products: [
       {
         id: "lkp-7",
@@ -157,7 +157,7 @@ const LOOKS_DATA = [
     description: "Rich, festive & unforgettable",
     duration: "0:29",
     tags: ["Saree", "Necklace"],
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-indian-woman-posing-with-traditional-handloom-saree-41316-large.mp4",
+    videoUrl: "https://assets.mixkit.co/1d5iy6uzi6i42iw0icpmx3xuftx9",
     products: [
       {
         id: "lkp-8",
@@ -220,18 +220,21 @@ export default function LookAndShop() {
   };
 
   return (
-    <div className="bg-[#FFFFFF] text-[#181818] min-h-screen space-y-16 pb-12">
+    <div
+      className="text-[#181818] min-h-screen space-y-20 pb-16 bg-fixed bg-no-repeat bg-cover"
+      style={{ background: "linear-gradient(180deg, #FBE7C6 0%, #F6EFE3 40%, #E9DCC4 100%)" }}
+    >
       
       {/* SECTION 1: HERO BANNER */}
-      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-8">
-        <div className="space-y-6">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-[#B68D40] font-sans font-bold block">
-            WATCH. INSPIRE. SHOP.
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center pt-10">
+        <div className="space-y-7">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-[#B68D40] font-sans font-bold block">
+            Watch. Inspire. Shop.
           </span>
-          <h1 className="text-4xl md:text-5xl font-serif font-light tracking-wide leading-tight uppercase">
+          <h1 className="text-4xl md:text-5xl font-serif font-light tracking-wide leading-[1.2] uppercase text-[#181818]">
             Looks You Love,<br />Pieces You Adore.
           </h1>
-          <p className="text-xs font-sans text-neutral-500 leading-relaxed max-w-md">
+          <p className="text-xs font-sans text-[#6E6E6E] leading-relaxed max-w-md">
             Explore our handpicked looks styled by our designers. Tap on any product in the video to shop instantly.
           </p>
           <button
@@ -240,28 +243,33 @@ export default function LookAndShop() {
               const target = document.getElementById("looks-directory");
               if (target) target.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-6 py-3 border border-[#B68D40] text-xs font-sans font-bold tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-colors duration-300 flex items-center gap-2"
+            className="px-8 py-3.5 bg-transparent border border-[#B68D40] text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-[#181818] hover:bg-[#181818] hover:text-[#D4AF37] hover:border-[#181818] transition-all duration-300 flex items-center gap-3"
           >
-            <span className="w-5 h-5 rounded-full border border-black/40 flex items-center justify-center text-[9px] pl-0.5">▶</span>
-            <span>HOW IT WORKS</span>
+            <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center text-[9px] pl-0.5">▶</span>
+            <span>How It Works</span>
           </button>
         </div>
 
-        <div className="relative aspect-[16/10] w-full border border-[#D9C7A3] bg-neutral-100 overflow-hidden shadow-sm">
+        <div className="relative aspect-[16/10] w-full rounded-xl border border-[#E6DCCF] bg-[#FFFCF8] overflow-hidden shadow-[0_16px_40px_-16px_rgba(24,24,24,0.25)]">
           <img
             src={redLehengaLook}
             alt="Red Lehenga Editorial Look"
             className="w-full h-full object-cover object-top"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
         </div>
       </section>
 
       {/* SECTION 2: WATCH OUR LOOKS DIRECTORY */}
-      <section id="looks-directory" className="max-w-7xl mx-auto px-6 space-y-8 pt-6">
-        <div className="text-center space-y-1.5">
-          <span className="text-[9px] uppercase tracking-[0.3em] text-[#B68D40] font-sans font-bold">WATCH OUR LOOKS</span>
-          <h2 className="text-xl md:text-2xl font-serif tracking-widest uppercase">Scroll, watch and shop the entire look</h2>
-          <div className="w-12 h-0.5 bg-[#B68D40] mx-auto mt-2" />
+      <section id="looks-directory" className="max-w-7xl mx-auto px-6 space-y-10 pt-4">
+        <div className="text-center space-y-3">
+          <span className="text-[9px] uppercase tracking-[0.3em] text-[#B68D40] font-sans font-bold">Watch Our Looks</span>
+          <h2 className="text-2xl md:text-3xl font-serif tracking-[0.1em] uppercase text-[#181818]">Scroll, Watch &amp; Shop the Entire Look</h2>
+          <div className="flex items-center justify-center gap-3">
+            <span className="w-10 h-[1px] bg-[#B68D40]" />
+            <span className="text-[10px] text-[#D4AF37] font-sans">✦</span>
+            <span className="w-10 h-[1px] bg-[#B68D40]" />
+          </div>
         </div>
 
         {/* Horizontal scroll grid of looks */}
@@ -277,13 +285,15 @@ export default function LookAndShop() {
                   setPlayingVideoId(isPlaying ? null : look.id);
                 }}
                 className={`group cursor-pointer space-y-3.5 ${
-                  isSelected ? 'scale-[1.02]' : 'opacity-85 hover:opacity-100'
+                  isSelected ? 'scale-[1.03]' : 'opacity-85 hover:opacity-100'
                 } transition-all duration-300`}
               >
                 {/* Video container */}
-                <div className={`relative aspect-[3/4] bg-neutral-50 border ${
-                  isSelected ? 'border-[#B68D40] shadow-md' : 'border-[#ECECEC]'
-                } overflow-hidden`}>
+                <div className={`relative aspect-[3/4] rounded-lg bg-[#FFFCF8] border overflow-hidden transition-all duration-300 ${
+                  isSelected
+                    ? 'border-[#B68D40] shadow-[0_14px_32px_-14px_rgba(182,141,64,0.45)]'
+                    : 'border-[#E6DCCF] shadow-[0_4px_16px_-10px_rgba(24,24,24,0.12)] group-hover:border-[#B68D40]'
+                }`}>
                   {isPlaying ? (
                     <video
                       src={look.videoUrl}
@@ -294,28 +304,28 @@ export default function LookAndShop() {
                     <img
                       src={look.products[0].image}
                       alt={look.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover saturate-[1.05] group-hover:scale-105 transition-transform duration-700"
                     />
                   )}
 
                   {/* play button overlay */}
                   {!isPlaying && (
-                    <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
-                      <div className="w-9 h-9 rounded-full bg-white/95 flex items-center justify-center shadow-md">
-                        <span className="text-[10px] text-neutral-900 pl-0.5">▶</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/20 flex items-center justify-center">
+                      <div className="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.25)] group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-[11px] text-white pl-0.5">▶</span>
                       </div>
                     </div>
                   )}
 
                   {/* duration badge */}
-                  <span className="absolute top-2.5 right-2.5 bg-black/60 text-white text-[8px] font-sans px-1.5 py-0.5">
+                  <span className="absolute top-2.5 right-2.5 bg-[#181818]/80 text-[#D4AF37] text-[8px] font-sans font-semibold tracking-wider px-2 py-1 rounded-sm">
                     {look.duration}
                   </span>
 
                   {/* bottom tag pills */}
                   <div className="absolute bottom-2.5 inset-x-2.5 flex flex-wrap gap-1">
                     {look.tags.map(t => (
-                      <span key={t} className="bg-white/80 dark:bg-black/80 text-neutral-900 dark:text-white text-[8px] font-sans font-semibold px-2 py-0.5 uppercase tracking-wider rounded-none">
+                      <span key={t} className="bg-white/85 backdrop-blur-sm text-[#181818] text-[8px] font-sans font-semibold px-2 py-0.5 uppercase tracking-wider rounded-sm">
                         + {t}
                       </span>
                     ))}
@@ -323,13 +333,13 @@ export default function LookAndShop() {
                 </div>
 
                 {/* Text details */}
-                <div className="space-y-0.5">
-                  <h4 className={`text-[10.5px] uppercase font-sans font-bold tracking-wider ${
-                    isSelected ? 'text-[#B68D40]' : 'text-neutral-800'
+                <div className="space-y-1">
+                  <h4 className={`text-[10.5px] uppercase font-serif tracking-[0.1em] ${
+                    isSelected ? 'text-[#B68D40]' : 'text-[#181818]'
                   }`}>
                     {look.title}
                   </h4>
-                  <p className="text-[9px] font-sans text-neutral-400 leading-snug line-clamp-1">{look.description}</p>
+                  <p className="text-[9px] font-sans text-[#6E6E6E] leading-snug line-clamp-1">{look.description}</p>
                 </div>
               </div>
             );
@@ -338,52 +348,59 @@ export default function LookAndShop() {
       </section>
 
       {/* SECTION 3: SHOP THE LOOK */}
-      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8">
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 pt-4">
         
         {/* Left Column Description */}
-        <div className="lg:col-span-3 space-y-4">
-          <h3 className="font-serif text-lg tracking-widest text-[#181818] uppercase">SHOP THE LOOK</h3>
-          <p className="text-xs font-sans text-neutral-400 leading-relaxed">
+        <div className="lg:col-span-3 space-y-5">
+          <h3 className="font-serif text-xl tracking-[0.1em] text-[#181818] uppercase">Shop the Look</h3>
+          <p className="text-xs font-sans text-[#6E6E6E] leading-relaxed">
             Curated pieces from the video you just watched.
           </p>
           <button
             onClick={() => navigate('/shop')}
-            className="px-5 py-3 border border-[#B68D40] text-[9px] font-sans font-bold tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-colors duration-300 w-full lg:w-auto"
+            className="px-6 py-3.5 bg-transparent border border-[#B68D40] text-[9.5px] font-sans font-bold tracking-[0.2em] uppercase text-[#181818] hover:bg-[#181818] hover:text-[#D4AF37] hover:border-[#181818] transition-all duration-300 w-full lg:w-auto"
           >
-            VIEW ALL PRODUCTS
+            View All Products
           </button>
         </div>
 
         {/* Middle Column Product Shelf */}
-        <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+        <div className="lg:col-span-6 grid grid-cols-2 gap-5">
           {activeLook.products.map((p) => {
             const inWish = isInWishlist(p.id);
             return (
-              <div key={p.id} className="group relative border border-[#ECECEC] flex flex-col justify-between h-full bg-white shadow-sm">
+              <div
+                key={p.id}
+                className="group relative rounded-lg border border-[#E6DCCF] flex flex-col justify-between h-full bg-[#FFFCF8] overflow-hidden shadow-[0_4px_16px_-10px_rgba(24,24,24,0.15)] hover:shadow-[0_14px_32px_-14px_rgba(182,141,64,0.4)] hover:border-[#B68D40] hover:-translate-y-1 transition-all duration-500"
+              >
                 <div className="relative aspect-[3/3.8] block bg-neutral-50 overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#F3E9D8] to-[#E6DCCF]">
+                    <Heart className="w-6 h-6 text-[#B68D40]/50" strokeWidth={1.2} />
+                  </div>
                   <img
                     src={p.image}
                     alt={p.name}
-                    className="w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
+                    onError={(e) => { e.currentTarget.style.opacity = '0'; }}
+                    className="relative w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                   />
                   {/* wishlist toggle */}
                   <button
                     onClick={() => toggleWishlist({ id: p.id, name: p.name, price: p.price, images: [p.image] })}
-                    className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full text-neutral-800 hover:text-[#B68D40] transition-colors focus:outline-none z-10"
+                    className="absolute top-2.5 right-2.5 p-1.5 bg-white/90 backdrop-blur-sm rounded-full text-[#181818] hover:text-[#B68D40] transition-colors focus:outline-none z-10 shadow-sm"
                   >
                     <Heart className={`w-3.5 h-3.5 ${inWish ? 'fill-[#B68D40] text-[#B68D40]' : ''}`} />
                   </button>
                 </div>
-                <div className="p-3.5 space-y-1.5 border-t">
-                  <span className="text-[8px] uppercase tracking-wider text-neutral-400 font-sans block">{p.designer}</span>
-                  <h4 className="font-serif text-[10.5px] uppercase text-[#181818] line-clamp-1">
+                <div className="p-4 space-y-2 border-t border-[#E6DCCF]">
+                  <span className="text-[8px] uppercase tracking-[0.15em] text-[#6E6E6E] font-sans block">{p.designer}</span>
+                  <h4 className="font-serif text-[11px] uppercase text-[#181818] line-clamp-1 tracking-wide">
                     {p.name}
                   </h4>
-                  <div className="flex justify-between items-center text-[10px] font-sans font-semibold pt-1">
-                    <span>₹{p.price.toLocaleString('en-IN')}</span>
+                  <div className="flex justify-between items-center text-[11px] font-sans font-semibold pt-1">
+                    <span className="text-[#B68D40]">₹{p.price.toLocaleString('en-IN')}</span>
                     <button
                       onClick={() => handleQuickAdd(p)}
-                      className="p-1 hover:text-[#B68D40] transition-colors"
+                      className="p-1 text-[#181818] hover:text-[#B68D40] transition-colors"
                       aria-label="Add to bag"
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
@@ -396,15 +413,15 @@ export default function LookAndShop() {
         </div>
 
         {/* Right Column Promo Card */}
-        <div className="lg:col-span-3 bg-neutral-50 border border-[#ECECEC] p-6 flex flex-col justify-between items-center text-center space-y-6 shadow-sm">
+        <div className="lg:col-span-3 bg-[#FFFDFC] rounded-lg border border-[#E6DCCF] p-7 flex flex-col justify-between items-center text-center space-y-7 shadow-[0_4px_16px_-10px_rgba(24,24,24,0.12)]">
           <div className="space-y-2">
-            <h3 className="font-serif text-lg tracking-wider text-neutral-800 uppercase">Love a look?</h3>
-            <p className="text-[11px] font-sans text-neutral-500 leading-relaxed">
+            <h3 className="font-serif text-xl tracking-[0.08em] text-[#181818] uppercase">Love a Look?</h3>
+            <p className="text-[11px] font-sans text-[#6E6E6E] leading-relaxed">
               Get it customised just for you.
             </p>
           </div>
 
-          <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden border">
+          <div className="w-full aspect-[4/3] rounded-lg bg-neutral-100 overflow-hidden border border-[#E6DCCF]">
             <img
               src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80"
               alt="Tailor consultation detail"
@@ -412,12 +429,12 @@ export default function LookAndShop() {
             />
           </div>
 
-          <div className="w-full space-y-3">
+          <div className="w-full space-y-3.5">
             <button
               onClick={() => navigate('/customize')}
-              className="w-full py-3 bg-[#181818] text-[#F8F6F2] hover:bg-[#B68D40] text-[9.5px] font-sans font-bold tracking-widest uppercase transition-colors"
+              className="w-full py-3.5 bg-[#181818] border border-[#B68D40] text-[#D4AF37] hover:bg-[#B68D40] hover:text-[#181818] text-[9.5px] font-sans font-bold tracking-[0.2em] uppercase transition-all duration-300"
             >
-              REQUEST CUSTOMISATION
+              Request Customisation
             </button>
             <a
               href="https://wa.me/919830012345"
@@ -433,27 +450,24 @@ export default function LookAndShop() {
       </section>
 
       {/* SECTION 4: VALUE PROPOSITIONS FOOTER BAR */}
-      <section className="max-w-7xl mx-auto px-6 border-t border-[#ECECEC] pt-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div className="flex flex-col items-center space-y-2">
-            <Sparkles className="w-5 h-5 text-[#B68D40]" />
-            <h4 className="text-[10px] tracking-wider font-sans font-bold uppercase text-[#181818]">HANDPICKED LOOKS</h4>
-            <p className="text-[9px] font-sans text-neutral-400">Curated by our in-house designers</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <Star className="w-5 h-5 text-[#B68D40]" />
-            <h4 className="text-[10px] tracking-wider font-sans font-bold uppercase text-[#181818]">PREMIUM QUALITY</h4>
-            <p className="text-[9px] font-sans text-neutral-400">Finest fabrics & craftsmanship</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <Scissors className="w-5 h-5 text-[#B68D40]" />
-            <h4 className="text-[10px] tracking-wider font-sans font-bold uppercase text-[#181818]">CUSTOMISATION AVAILABLE</h4>
-            <p className="text-[9px] font-sans text-neutral-400">Made just for you</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <ShieldCheck className="w-5 h-5 text-[#B68D40]" />
-            <h4 className="text-[10px] tracking-wider font-sans font-bold uppercase text-[#181818]">SECURE SHOPPING</h4>
-            <p className="text-[9px] font-sans text-neutral-400">Safe & easy checkout</p>
+      <section className="w-full bg-[#FFFDFC] border-y border-[#E6DCCF] py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { Icon: Sparkles, label: "Handpicked Looks", desc: "Curated by our in-house designers" },
+              { Icon: Star, label: "Premium Quality", desc: "Finest fabrics & craftsmanship" },
+              { Icon: Scissors, label: "Customisation Available", desc: "Made just for you" },
+              { Icon: ShieldCheck, label: "Secure Shopping", desc: "Safe & easy checkout" },
+            ].map(({ Icon, label, desc }) => (
+              <div
+                key={label}
+                className="group flex flex-col items-center px-4 py-5 space-y-3 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(182,141,64,0.35)]"
+              >
+                <Icon className="w-5 h-5 text-[#B68D40] group-hover:text-[#D4AF37] transition-colors duration-300" strokeWidth={1.5} />
+                <h4 className="text-[10px] tracking-[0.18em] font-sans font-semibold uppercase text-[#181818]">{label}</h4>
+                <p className="text-[10px] font-sans text-[#6E6E6E] leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
